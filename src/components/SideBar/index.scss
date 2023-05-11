@@ -14,7 +14,7 @@
 
     img {
         display: block;
-        width: 50px;
+        width: 80px;
         margin: 8px auto;
         height: auto;
 
@@ -33,13 +33,93 @@
         width: 100%;
 
         a{
-            font-size: 22px;
+            font-size: 30px;
             color: #4d4d4e;
             display: block;
             position: relative;
-            height: 51px;
-            line-height: 51px;
+            height: 70px;
+            line-height: 60px;
             text-decoration: none;
+
+            i {
+                transition: all 0.3s ease-out ;
+            }
+    
+            &:hover {
+                color: #ffd700;
+    
+                svg {
+                    opacity: 0;
+                }
+    
+                &:after {
+                    opacity: 1;
+                }
+            }
+
+            &:after {
+                content: '';
+                font-size: 15px;
+                letter-spacing: 2px;
+                position: absolute;
+                display: block;
+                width: 100%;
+                bottom: 0;
+                text-align: center;
+                opacity: 0;
+                transition: all 0.3s ease-out;
+            }
+    
+            &:first-child{
+                &::after {
+                    content: 'HOME';
+                }
+            }
+        }
+
+        a.about-link{
+            &::after {
+                content: 'ABOUT';
+            }
+        }
+
+       a.contact-link{
+            &::after {
+                content: 'CONTACT';
+            }
+        }
+
+        a.active {
+            svg {
+                color: #ffd700;
+            }
+        }
+    }
+
+    ul {
+        position: absolute;
+        bottom: 20px;
+        display: block;
+        list-style: none;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+
+        li {
+            a {
+                font-size: 20px;
+                display: block;
+                padding: 10px;
+                line-height: 40px;
+
+                &:hover svg{
+                    color: #ffd700;
+                }
+                
+            }
+            
+            
         }
     }
 }
